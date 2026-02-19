@@ -108,3 +108,42 @@ function left2(str){
     let anwser = str.substring(2)+ str.substring(0,2);
     return anwser;
 }
+
+function firstLast6(arr){
+  if(arr[0]==6||arr[arr.length-1]==6){
+    return true;
+  }
+  return false;
+}
+
+function has23(arr){
+    for(let i=0; i<arr.length;i++){
+        if(arr[i]==2||arr[i]==3){
+            return true;
+        }
+    }
+    return false;
+}
+
+
+function fix23(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] == 2 && arr[i + 1] == 3) {
+             arr[i + 1] = 0
+            return arr;
+        }
+    }
+    return arr;
+}
+
+function countYZ(str) {
+    str = str.toLowerCase();
+    let count = 0
+    for (let i = 0; i < str.length; i++) {
+        if ((str[i] == "y" || str[i]=="z") && ( i==str.length-1|| str[i + 1] == " ")){
+            count = count + 1
+        }
+    }
+    return count;
+}
+
