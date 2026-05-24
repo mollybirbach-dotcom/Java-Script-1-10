@@ -1,3 +1,4 @@
+  //python -m http.server
 
 function sleep_in(weekday, vacation) {
     if (vacation == true) {
@@ -146,4 +147,27 @@ function countYZ(str) {
     }
     return count;
 }
+
+function endOther(stra,strb){
+// strings are immutable (unchangeable) so you have 
+// to store the new version in seperate strings
+let str1 =stra.toLowerCase();
+let str2 =strb.toLowerCase();
+let index1 = str1.lastIndexOf(str2)
+let index2 = str2.lastIndexOf(str1);
+// use scratch paper to logic out math
+//if the math happens to make str1.length-str2.length = -1 and string 2 is not 
+// found at all it would mistakenly return true
+//therefore we need to check if index 1 or 2 is equal to -1.
+let check1 = (index1 ==str1.length - str2.length) && index1 !== -1;
+let check2 = (index2 ==str2.length - str1.length) && index2 !== -1;
+
+if(check1 || check2){
+    return true;
+}
+return false;
+}
+
+
+
 
