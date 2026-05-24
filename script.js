@@ -168,6 +168,50 @@ if(check1 || check2){
 return false;
 }
 
+// 16. starOut
+// Return a version of the given string, where for every star (*) 
+// in the string the star and the chars immediately to its left and right are gone. 
+// So "ab*cd" yields "ad" and "ab**cd" also yields "ad".  Hint: make a new string to store your answer.
+
+// starOut("ab*cd") → "ad"
+// starOut("ab**cd") → "ad"
+// starOut("sm*eilly") → "silly"
+
+function starOut(str){
+    let newstr = "";
+    for(let i=0; i<str.length; i++){
+        if(str[i]!="*"&& str[i+1]!="*" && str[i-1]!="*"){
+            newstr+= str[i];
+        }
+    }
+    return newstr;
+}
+
+
+// 17. getSandwich
+
+// A sandwich is two pieces of bread with something in between. 
+// Return the string that is between the first and last appearance of "bread" 
+// in the given string, or return the empty string "" if there are not two pieces of bread.
+//   You will need to use: indexOf()/lastIndexOf() to solve this problem.  Look up what those functions do.
+
+// getSandwich("breadjambread") → "jam"
+// getSandwich("xxbreadturkeybreadyy") → "turkey"
+// getSandwich("xxbreadyy") → ""
+
+function getSandwich(str){
+let z = ""
+let x = str.indexOf("bread");
+let y = str.lastIndexOf("bread");
+if(x==y||(x==-1||y==-1)){
+    return z;
+} else {
+   return(str.substring(x+5,y)); 
+}
+}
+
+
+
 
 
 
